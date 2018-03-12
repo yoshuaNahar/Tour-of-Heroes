@@ -1,13 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-
 import {Observable} from 'rxjs/Observable';
+import {Hero} from '../heroes';
 import {Subject} from 'rxjs/Subject';
-import {of} from 'rxjs/observable/of';
-
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-
-import {Hero} from '../hero';
 import {HeroService} from '../hero.service';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-hero-search',
@@ -15,6 +11,7 @@ import {HeroService} from '../hero.service';
   styleUrls: ['./hero-search.component.css']
 })
 export class HeroSearchComponent implements OnInit {
+
   heroes$: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
@@ -38,4 +35,5 @@ export class HeroSearchComponent implements OnInit {
       switchMap((term: string) => this.heroService.searchHeroes(term)),
     );
   }
+
 }

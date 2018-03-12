@@ -51,14 +51,13 @@
   border-radius: 4px 0 0 4px;
 }
 
-.button {
+button {
   background-color: #eee;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
-  cursor: pointer;
   cursor: hand;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 button:hover {
@@ -72,4 +71,3 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
-
